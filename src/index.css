@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Fira Sans", Arial, sans-serif;
+  --color-primary: #4737ff;
+  --color-soft: #f5f4ff;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-primary font-sans antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white min-h-[56px] px-6 py-2 min-w-[220px] text-xl font-bold transition-all hover:opacity-90 active:scale-95 disabled:opacity-45 disabled:cursor-not-allowed;
+  }
+
+  .logo-mark {
+    @apply w-11 h-11 border-2 border-primary;
+    background: linear-gradient(135deg, #d7d2ff 30%, #ffffff 30%);
+  }
+
+  .simple-card {
+    @apply border-2 border-primary min-h-[130px] flex items-center justify-center text-center p-3 text-2xl font-semibold bg-soft;
+  }
+
+  .quiz-icon {
+    @apply w-[72px] h-[72px] border-2 border-primary bg-white;
+  }
+
+  .quiz-close {
+    @apply w-[76px] h-[76px] border-2 border-primary bg-white text-primary text-5xl leading-none transition-colors hover:bg-soft;
+  }
+
+  .quote-box {
+    @apply border-[16px] border-primary bg-white p-[18px];
+  }
+
+  .option-btn {
+    @apply w-full border-2 border-[#7f75ff] bg-white text-primary text-left grid grid-cols-[74px_1fr] gap-[18px] items-center p-4 transition-all hover:bg-soft;
+  }
+
+  .option-btn.selected {
+    @apply bg-primary text-white;
+  }
+
+  .option-label {
+    @apply w-14 h-14 border-[6px] border-primary flex items-center justify-center text-[34px] font-bold;
+  }
+
+  .option-btn.selected .option-label {
+    @apply border-white;
+  }
+
+  .subject-option {
+    @apply border-2 border-[#7f75ff] text-primary bg-white min-h-[98px] text-[34px] font-semibold p-4 transition-all hover:bg-soft;
+  }
+
+  .subject-option.selected {
+    @apply bg-primary text-white;
+  }
+
+  .recommendation-card {
+    @apply border-2 border-primary bg-soft overflow-hidden;
+  }
+
+  .recommendation-image {
+    @apply h-[120px] border-b-2 border-primary bg-white flex items-center justify-center;
+  }
+
+  .site-header {
+    @apply flex justify-between items-center px-10 py-4 border-b border-primary;
+  }
+
+  .logo-block {
+    @apply flex items-center gap-4;
+  }
+
+  .logo-title {
+    @apply font-bold text-lg leading-tight;
+  }
+
+  .logo-sub {
+    @apply text-xs opacity-70;
+  }
+
+  .site-nav {
+    @apply flex items-center gap-6;
+  }
+
+  .hero-banner {
+    @apply py-20 px-5 text-center;
+  }
+
+  .promo-strip {
+    @apply bg-primary text-white py-10 px-5 text-center;
+  }
+
+  .quiz-header {
+    @apply flex items-center gap-4 px-10 py-5 border-b border-primary;
+  }
+
+  .quiz-title {
+    @apply font-bold text-lg;
+  }
+
+  .quiz-step {
+    @apply text-xs opacity-70;
+  }
+
+  .quiz-layout {
+    @apply grid grid-cols-1 lg:grid-cols-[350px_1fr] min-h-[calc(100vh-120px)];
+  }
+
+  .quiz-quote {
+    @apply bg-soft p-10 border-r border-primary hidden lg:block;
+  }
+
+  .quiz-question {
+    @apply p-8 lg:p-20;
+  }
+
+  .quiz-options {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-[18px];
+  }
+
+  .subject-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[18px];
+  }
+
+  .quote-author {
+    @apply font-bold text-xl mb-1;
+  }
+
+  .quote-role {
+    @apply text-xs uppercase tracking-wider opacity-60 font-bold;
+  }
+
+  .quote-text {
+    @apply font-bold text-xl italic leading-relaxed;
+  }
+
+  .site-footer {
+    @apply bg-soft p-10 lg:p-20 border-t border-primary mt-20;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-soft;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary rounded-full border-2 border-soft;
+}
